@@ -41,6 +41,12 @@ pc-buying-brief       used-pc-listing-check   used-pc-handover
 
 - `references/cleanup-list.md` — 제거 대상과 절대 지우면 안 되는 것
 
+## 설치
+
+`skills/dist/`에 설치용 `.skill` 패키지가 있다. Claude 대화에 첨부하면 저장 버튼이 뜨고, 저장하면 이후 모든 대화에서 자동으로 발동한다.
+
+프로젝트 지식에 넣거나 raw URL로 불러오는 방법도 있다. 자세한 내용은 `dist/README.md`를 참고한다.
+
 ## 설계 원칙
 
 **가격을 하드코딩하지 않는다.** DRAM과 NAND 값은 주 단위로 움직인다. 스킬은 판단 구조와 규칙만 담고, 시세는 검색으로 조회하게 한다. 앵커 값에는 기준일을 붙여 참고용으로만 둔다.
