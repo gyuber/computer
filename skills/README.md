@@ -2,13 +2,14 @@
 
 중고·신품 PC를 고르고, 판단하고, 인수하는 과정을 Claude 스킬로 정리한 것이다. 실제로 아이용 데스크탑 한 대를 구하면서 매물 스물여섯 건을 검토한 과정에서 나온 판단 규칙들을 담았다.
 
-## 스킬 세 개와 사용 시점
+## 스킬 네 개와 사용 시점
 
-구매는 세 단계로 진행되고, 각 단계에 스킬 하나가 대응한다.
+구매는 세 단계로 진행된다. 매물 판단은 중고와 신품 완제품으로 갈린다.
 
 ```
-방향 설정          →  매물 판단          →  인수 정리
-pc-buying-brief       used-pc-listing-check   used-pc-handover
+방향 설정          →  매물 판단                →  인수 정리
+pc-buying-brief       used-pc-listing-check (중고)   used-pc-handover
+                      new-pc-product-check  (신품)
 ```
 
 ### 1. `pc-buying-brief` — 무엇을 살까
@@ -30,6 +31,19 @@ pc-buying-brief       used-pc-listing-check   used-pc-handover
 - `references/part-tiers.md` — 칩셋·CPU·램·SSD·그래픽카드·파워 등급표와 앵커 시세
 - `references/photo-forensics.md` — 스크린샷 판독과 교차검증. **SSD 사용 시간으로 채굴 여부를 배제하는 추론**이 여기 있다
 - `references/seller-questions.md` — 판매자에게 무엇을 어떻게 물을지
+
+### 2-1. `new-pc-product-check` — 이 신품 완제품이 맞는가
+
+상품 링크나 모델명을 받아 사용자 프로필 기준으로 진행·조건부·탈락을 판정한다. 여러 후보를 주면 표로 비교해 1순위를 고른다.
+
+**쓰는 때:** 다나와·쿠팡·공식몰 링크를 주면서 "이 그램 어때?", "이 중에 뭐가 나아?"
+
+중고와 달리 신품의 함정은 **고칠 수 없는 사양(온보드 램)**, **가격 착시(윈도우 미포함 `ZD` 모델, 카드할인가)**, **이름만 새것인 구형 CPU(울트라 아닌 코어 5·7)**다.
+
+- `references/profiles.md` — 사용자별 판정 기준(필수·감점·탈락). 새 사람이 생기면 여기에 추가
+- `references/traps.md` — 모델 코드 해독, CPU 세대 판별, 램 구성, 가격 착시, 판매 경로, USB-C 모니터 연결
+
+판정 결과는 프로필의 추적 이슈에 코멘트로 남긴다.
 
 ### 3. `used-pc-handover` — 받았는데 뭐부터
 
