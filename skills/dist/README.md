@@ -7,6 +7,7 @@
 | `used-pc-listing-check.skill` | SKILL.md + 등급표·사진판독·질문템플릿 3개 |
 | `pc-buying-brief.skill` | SKILL.md + 판단틀·브리프템플릿 |
 | `used-pc-handover.skill` | SKILL.md + 프로그램 정리목록 |
+| `new-pc-product-check.skill` | SKILL.md + 사용자 프로필·신품 함정 |
 
 ## 설치
 
